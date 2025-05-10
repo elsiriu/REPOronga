@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manage Addons - ARSIM Admin</title>
+  <link rel="stylesheet" href="../../css/normalize.css">
+  <link rel="stylesheet" href="../../css/main.css">
+  <link rel="stylesheet" href="../../css/header.css">
+  <link rel="stylesheet" href="../../css/admin.css">
+</head>
+<body class="dark-theme">
+  <!-- Admin Header -->
+  <header class="admin-header">
+    <div class="container">
+      <div class="admin-header-content">
+        <div class="logo-container">
+          <a href="../../index.html">
+            <img class="logo" src="../../utils/ARSIMLOGO.png" alt="ARSIM Logo">
+          </a>
+          <div>
+            <a href="../../index.html">
+              <h1 class="site-title">ARSIM Admin</h1>
+            </a>
+          </div>
+        </div>
+        <div class="admin-controls">
+          <button id="theme-toggle" class="theme-toggle">Light/Dark</button>
+          <div class="admin-user">
+            <span id="admin-username">Admin</span>
+            <button id="logout-button" class="button small-button">Logout</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  
+  <!-- Admin Navigation -->
+  <nav class="admin-nav">
+    <div class="container">
+      <div class="admin-nav-links">
+        <a href="../index.html" class="admin-nav-link">Dashboard</a>
+        <a href="addons.html" class="admin-nav-link active">Addons</a>
+        <a href="add-addon.html" class="admin-nav-link">Add Addons</a>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- Main Content -->
+  <main class="admin-content">
+    <div class="container">
+      <div class="admin-header-actions">
+        <h2 class="admin-title">Manage Addons</h2>
+        <a href="add-addon.html" class="button primary-button">Add New Addon</a>
+      </div>
+      
+      <div class="admin-filters">
+        <div class="filter-group">
+          <label for="category-filter">Category:</label>
+          <select id="category-filter">
+            <option value="">All Categories</option>
+            <option value="p3d">P3D</option>
+            <option value="xplane">XPLANE</option>
+            <option value="msfs">MSFS</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label for="status-filter">Status:</label>
+          <select id="status-filter">
+            <option value="">All Status</option>
+            <option value="published">Published</option>
+            <option value="draft">Draft</option>
+            <option value="recommended">Recommended</option>
+          </select>
+        </div>
+        <div class="filter-group search-filter">
+          <input type="search" id="addon-search" placeholder="Search addons...">
+          <button id="search-button" class="button small-button">Search</button>
+        </div>
+      </div>
+      
+      <div class="table-container">
+        <table class="admin-table" id="addons-table">
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>Category</th>
+              <th>Date</th>
+              <th>Comments</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="addons-list">
+            <!-- Addons will be loaded dynamically -->
+          </tbody>
+        </table>
+      </div>
+      
+      <div class="pagination">
+        <button class="pagination-button" disabled>Previous</button>
+        <span class="pagination-info">Page 1 of 5</span>
+        <button class="pagination-button">Next</button>
+      </div>
+    </div>
+  </main>
+
+  <!-- Delete Confirmation Modal -->
+  <div id="delete-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal">&times;</span>
+      <h2>Confirm Deletion</h2>
+      <p>Are you sure you want to delete this addon? This action cannot be undone.</p>
+      <div class="modal-actions">
+        <button id="confirm-delete" class="button danger-button">Delete</button>
+        <button id="cancel-delete" class="button secondary-button">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/theme.js"></script>
+  <script src="../js/data/addons.js"></script>
+  <script src="../js/auth.js"></script>
+  <script src="../js/admin-addons.js"></script>
+</body>
+</html>

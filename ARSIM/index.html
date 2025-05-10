@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ARSIM - MSFS/XPLANE/P3D Aircraft & More</title>
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/navigation.css">
+  <link rel="stylesheet" href="css/cards.css">
+  <link rel="stylesheet" href="css/footer.css">
+</head>
+<body class="dark-theme">
+  <!-- Top Header -->
+  <header class="top-header">
+    <div class="container">
+      <nav class="top-nav">
+        <div class="top-nav-links">
+          <a href="index.html">Home</a>
+          <a href="admin/index.html">Admin Site</a>
+        </div>
+        <button id="theme-toggle" class="theme-toggle">Light/Dark</button>
+      </nav>
+    </div>
+  </header>
+  
+  <!-- Main Header with Logo and Search -->
+  <div class="main-header">
+    <div class="container">
+      <div class="header-content">
+        <div class="logo-container">
+          <img class="logo" src="./utils/ARSIMLOGO.png" alt="ARSIM Logo">
+          <div>
+            <h1 class="site-title">ARSIM</h1>
+            <p class="site-tagline">MSFS/XPLANE/P3D Aircraft & More</p>
+          </div>
+        </div>
+        <div class="search-container">
+          <input type="search" class="search-input" placeholder="Search Addons...">
+          <button class="search-button">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="25" y1="25" x2="16.65" y2="16.65"></line>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Main Navigation -->
+  <nav class="main-nav">
+    <div class="container">
+      <div class="nav-links">
+        <a href="pages/faq.html" class="nav-link">
+          <span class="nav-icon">❓</span> FAQ
+        </a>
+        <a href="pages/p3d.html" class="nav-link">
+          <span class="nav-icon">✈️</span> P3D
+        </a>
+        <a href="pages/xplane.html" class="nav-link">
+          <span class="nav-icon">✈️</span> XPLANE
+        </a>
+        <a href="pages/msfs.html" class="nav-link">
+          <span class="nav-icon">✈️</span> MSFS
+        </a>
+        <a href="pages/other-files.html" class="nav-link">
+          <span class="nav-icon">📁</span> Other Files
+        </a>
+        <a href="pages/world-map.html" class="nav-link">
+          <span class="nav-icon">📁</span> World Map
+        </a>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- Main Content -->
+  <main class="main-content">
+    <div class="container">
+      <h2 class="section-title">Featured Addons</h2>
+      <div class="aircraft-grid" id="addons-container">
+        <!-- Addons will be loaded dynamically from addons.js -->
+      </div>
+      
+      <div class="pagination">
+        <button class="pagination-button" disabled>Previous</button>
+        <span class="pagination-info">Page 1 of 5</span>
+        <button class="pagination-button">Next</button>
+      </div>
+    </div>
+  </main>
+  
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <img src="img/logo.png" alt="ARSIM Logo" width="40" height="40">
+          <span>ARSIM</span>
+        </div>
+        <div class="footer-links">
+          <div class="footer-column">
+            <h3>Categories</h3>
+            <ul>
+              <li><a href="pages/p3d.html">P3D</a></li>
+              <li><a href="pages/xplane.html">XPLANE</a></li>
+              <li><a href="pages/msfs.html">MSFS</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h3>Information</h3>
+            <ul>
+              <li><a href="pages/about.html">About Us</a></li>
+              <li><a href="pages/contact.html">Contact</a></li>
+              <li><a href="pages/privacy.html">Privacy Policy</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h3>Community</h3>
+            <ul>
+              <li><a href="pages/contributing.html">Contributing</a></li>
+              <li><a href="pages/discord.html">Discord</a></li>
+              <li><a href="pages/forum.html">Forum</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 ARSIM. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Admin Login Modal -->
+  <div id="login-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal">&times;</span>
+      <h2>Admin Login</h2>
+      <form id="login-form">
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" id="username" name="username" required>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" required>
+        </div>
+        <button type="submit" class="button primary-button">Login</button>
+      </form>
+      <div id="login-error" class="error-message"></div>
+    </div>
+  </div>
+
+  <script src="js/theme.js"></script>
+  <script src="js/data/addons.js"></script>
+  <script src="js/render-addons.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

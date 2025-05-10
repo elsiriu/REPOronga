@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add New Addon - ARSIM Admin</title>
+  <link rel="stylesheet" href="../../css/normalize.css">
+  <link rel="stylesheet" href="../../css/main.css">
+  <link rel="stylesheet" href="../../css/header.css">
+  <link rel="stylesheet" href="../../css/admin.css">
+</head>
+<body class="dark-theme">
+  <!-- Admin Header -->
+  <header class="admin-header">
+    <div class="container">
+      <div class="admin-header-content">
+        <div class="logo-container">
+          <a href="../../index.html">
+            <img class="logo" src="../../utils/ARSIMLOGO.png" alt="ARSIM Logo">
+          </a>
+          <div>
+            <a href="../../index.html">
+              <h1 class="site-title">ARSIM Admin</h1>
+            </a>
+          </div>
+        </div>
+        <div class="admin-controls">
+          <button id="theme-toggle" class="theme-toggle">Light/Dark</button>
+          <div class="admin-user">
+            <span id="admin-username">Admin</span>
+            <button id="logout-button" class="button small-button">Logout</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  
+  <!-- Admin Navigation -->
+  <nav class="admin-nav">
+    <div class="container">
+      <div class="admin-nav-links">
+        <a href="../index.html" class="admin-nav-link">Dashboard</a>
+        <a href="addons.html" class="admin-nav-link">Addons</a>
+        <a href="add-addon.html" class="admin-nav-link active">Add Addons</a>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- Main Content -->
+  <main class="admin-content">
+    <div class="container">
+      <div class="admin-header-actions">
+        <h2 class="admin-title">Add New Addon</h2>
+        <a href="addons.html" class="button secondary-button">Back to Addons</a>
+      </div>
+      
+      <form id="addon-form" class="admin-form">
+        <div class="form-section">
+          <h3>Basic Information</h3>
+          
+          <div class="form-group">
+            <label for="title">Title*</label>
+            <input type="text" id="title" name="title" required>
+          </div>
+          
+          <div class="form-row">
+            <div class="form-group">
+              <label for="category">Category*</label>
+              <select id="category" name="category" required>
+                <option value="">Select Category</option>
+                <option value="p3d">P3D</option>
+                <option value="xplane">XPLANE</option>
+                <option value="msfs">MSFS</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label for="publisher">Publisher*</label>
+              <input type="text" id="publisher" name="publisher" required>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="tags">Tags (comma separated)</label>
+            <input type="text" id="tags" name="tags" placeholder="e.g. airport, scenery, freeware">
+          </div>
+          
+          <div class="form-group checkbox-group">
+            <input type="checkbox" id="recommended" name="recommended">
+            <label for="recommended">Mark as Recommended</label>
+          </div>
+        </div>
+        
+        <div class="form-section">
+          <h3>Media</h3>
+          
+          <div class="form-group">
+            <label for="main-image">Main Image*</label>
+            <input type="file" id="main-image" name="main-image" accept="image/*" required>
+            <div class="image-preview" id="main-image-preview"></div>
+          </div>
+          
+          <div class="form-group">
+            <label for="gallery-images">Gallery Images (up to 5)</label>
+            <input type="file" id="gallery-images" name="gallery-images" accept="image/*" multiple>
+            <div class="gallery-preview" id="gallery-preview"></div>
+          </div>
+        </div>
+        
+        <div class="form-section">
+          <h3>Content</h3>
+          
+          <div class="form-group">
+            <label for="short-description">Short Description*</label>
+            <textarea id="short-description" name="short-description" rows="2" required></textarea>
+          </div>
+          
+          <div class="form-group">
+            <label for="full-description">Full Description*</label>
+            <textarea id="full-description" name="full-description" rows="10" required></textarea>
+          </div>
+          
+          <div class="form-group">
+            <label for="system-requirements">System Requirements</label>
+            <textarea id="system-requirements" name="system-requirements" rows="5"></textarea>
+          </div>
+        </div>
+        
+        <div class="form-section">
+          <h3>Download Information</h3>
+          
+          <div class="form-group">
+            <label for="download-link">Download Link*</label>
+            <input type="url" id="download-link" name="download-link" required>
+          </div>
+          
+          <div class="form-row">
+            <div class="form-group">
+              <label for="file-size">File Size (MB)</label>
+              <input type="number" id="file-size" name="file-size" min="0" step="0.01">
+            </div>
+            
+            <div class="form-group">
+              <label for="version">Version</label>
+              <input type="text" id="version" name="version">
+            </div>
+          </div>
+        </div>
+        
+        <div class="form-actions">
+          <button type="submit" class="button primary-button">Save Addon</button>
+          <button type="button" id="save-draft" class="button secondary-button">Save as Draft</button>
+          <button type="reset" class="button secondary-button">Reset Form</button>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <script src="../js/theme.js"></script>
+  <script src="../js/auth.js"></script>
+  <script src="../js/admin-addon-form.js"></script>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard - ARSIM</title>
+  <link rel="stylesheet" href="../css/normalize.css">
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/header.css">
+  <link rel="stylesheet" href="../css/admin.css">
+</head>
+<body class="dark-theme">
+  <!-- Admin Header -->
+  <header class="admin-header">
+    <div class="container">
+      <div class="admin-header-content">
+        <div class="logo-container">
+          <a href="../index.html">
+            <img class="logo" src="../utils/ARSIMLOGO.png" alt="ARSIM Logo">
+          </a>
+          <div>
+            <a href="../index.html">
+              <h1 class="site-title">ARSIM Admin</h1>
+            </a>
+          </div>
+        </div>
+        <div class="admin-controls">
+          <button id="theme-toggle" class="theme-toggle">Light/Dark</button>
+          <div class="admin-user">
+            <span id="admin-username">Admin</span>
+            <button id="logout-button" class="button small-button">Logout</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  
+  <!-- Admin Navigation -->
+  <nav class="admin-nav">
+    <div class="container">
+      <div class="admin-nav-links">
+        <a href="../index.html" class="admin-nav-link active">Dashboard</a>
+        <a href="src/addons.html" class="admin-nav-link">Addons</a>
+        <a href="src/add-addon.html" class="admin-nav-link">Add Addons</a>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- Main Content -->
+  <main class="admin-content">
+    <div class="container">
+      <h2 class="admin-title">Dashboard</h2>
+      
+      <div class="stats-grid">
+        <div class="stat-card">
+          <h3>Total Addons</h3>
+          <p class="stat-number">124</p>
+          <p class="stat-description">All addons in the database</p>
+        </div>
+        <div class="stat-card">
+          <h3>Recent Comments</h3>
+          <p class="stat-number">48</p>
+          <p class="stat-description">Last 30 days</p>
+        </div>
+        <div class="stat-card">
+          <h3>Pending Reviews</h3>
+          <p class="stat-number">7</p>
+          <p class="stat-description">Addons awaiting approval</p>
+        </div>
+        <div class="stat-card">
+          <h3>Total Views</h3>
+          <p class="stat-number">12,458</p>
+          <p class="stat-description">Last 30 days</p>
+        </div>
+      </div>
+      
+      <div class="admin-section">
+        <h3>Quick Actions</h3>
+        <div class="action-buttons">
+          <a href="add-addon.html" class="button primary-button">Add New Addon</a>
+          <a href="addons.html" class="button secondary-button">Manage Addons</a>
+          <a href="comments.html" class="button secondary-button">Moderate Comments</a>
+          <a href="settings.html" class="button secondary-button">Site Settings</a>
+        </div>
+      </div>
+      
+      <div class="admin-section">
+        <h3>Recent Activity</h3>
+        <div class="activity-list">
+          <div class="activity-item">
+            <div class="activity-icon">📝</div>
+            <div class="activity-details">
+              <p class="activity-title">New addon added: FSDG - Monastir Airport</p>
+              <p class="activity-meta">By Admin, 2 hours ago</p>
+            </div>
+          </div>
+          <div class="activity-item">
+            <div class="activity-icon">💬</div>
+            <div class="activity-details">
+              <p class="activity-title">New comment on Project Russia - Eurasia</p>
+              <p class="activity-meta">By User123, 5 hours ago</p>
+            </div>
+          </div>
+          <div class="activity-item">
+            <div class="activity-icon">🔄</div>
+            <div class="activity-details">
+              <p class="activity-title">Updated addon: SAMSCENE - SINGAPORE CITY</p>
+              <p class="activity-meta">By Admin, 1 day ago</p>
+            </div>
+          </div>
+          <div class="activity-item">
+            <div class="activity-icon">👍</div>
+            <div class="activity-details">
+              <p class="activity-title">Marked as recommended: Project Russia - Eurasia</p>
+              <p class="activity-meta">By Admin, 1 day ago</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="../js/theme.js"></script>
+
+  <script src="../js/auth.js"></script>
+  <script src="../js/admin.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
